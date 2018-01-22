@@ -8,6 +8,14 @@ body {
   background: url(https://images.pexels.com/photos/403575/pexels-photo-403575.jpeg?w=1260&h=750&auto=compress&cs=tinysrgb);
   background-size: cover; }
 
+button:focus {
+  outline: none; }
+
+button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+  transition: 0.5s; }
+
 .nav {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -118,5 +126,12 @@ body {
         background-color: #ffc042;
         font-weight: 900;
         font-size: 16px; }
+    .column-container .column ul .card-placeholder {
+      background-color: transparent;
+      height: 25px;
+      margin: 5px 0;
+      border-top: 1px solid #7f8c8d;
+      background-color: #eee;
+      border-bottom: 1px solid #7f8c8d; }
 
 /*# sourceMappingURL=style-prefixed.css.map */

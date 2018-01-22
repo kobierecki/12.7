@@ -11,6 +11,14 @@ body{
     background-size: cover;
 }
 
+button:focus{
+    outline: none;
+}
+button:hover{
+    transform: scale(1.1);
+    transition: 0.5s;
+}
+
 .nav {
     display: flex;
     justify-content: space-between;
@@ -124,7 +132,16 @@ body{
                 font-size: 16px;
             }
         }
+        .card-placeholder {
+            background-color: transparent;
+            height: 25px;
+            margin: 5px 0;
+            border-top: 1px solid #7f8c8d;
+            background-color: #eee;
+            border-bottom: 1px solid #7f8c8d;
+        }
     }
 }
+
 
 
