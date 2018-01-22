@@ -1,0 +1,32 @@
+{
+  "name": "7.5.1",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm run test:html",
+    "test:html": "glob-run nu-html-checker *.html",
+    "build": "npm run build:clean && npm run build:sass && npm run build:autoprefixer && npm run test",
+    "build:clean": "rimraf css/*.css",
+    "build:sass": "sass --sourcemap=none --update scss:css",
+    "build:autoprefixer": "autoprefixer-cli css/style.css",
+    "watch": "parallelshell \"npm run watch:browsersync\"  \"npm run watch:sass\" \"npm run watch:autoprefixer\" ",
+    "watch:sass": "sass --watch scss/style.scss:css/style.css",
+    "watch:browsersync": "browser-sync start --server --files css/*.css *.html",
+    "watch:autoprefixer": "onchange -d 100 css/style.css -- autoprefixer-cli -o css/style-prefixed.css css/style.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "autoprefixer-cli": "^1.0.0",
+    "browser-sync": "^2.18.13",
+    "glob-run": "^0.1.6",
+    "nu-html-checker": "^0.1.0",
+    "parallelshell": "^3.0.2",
+    "rimraf": "^2.6.2"
+  },
+  "devDependencies": {
+    "onchange": "^3.2.1"
+  }
+}
