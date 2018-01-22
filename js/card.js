@@ -25,7 +25,7 @@ function Card(id, name) {
 Card.prototype.removeCard = function() {
         var self = this;
         $.ajax({
-            url: baseUrl + '/column/' + self.id,
+            url: baseUrl + '/card/' + self.id,
             method: 'DELETE',
             success: function(){
                 self.$element.remove();
