@@ -33,7 +33,11 @@ Card.prototype.removeCard = function() {
     });
 }
 
-function moveCard(cardId, cardName, targetedColumnId){
+Card.prototype.moveCard = function(cardId, cardName, targetedColumnId){
+    var self = this;
+    console.log(cardId);
+    console.log(cardName);
+    console.log(targetedColumnId);
     $.ajax({
         url: baseUrl + '/card/' + self.cardId,
         type: 'PUT',

@@ -35,7 +35,10 @@ function initSortable() {
             cardId = ui.item[0].id;
             cardName = ui.item[0].innerText;
             targetedColumnId = ui.item[0].parentElement.id;
-            moveCard(cardId, cardName, targetedColumnId);
+            console.log(ui.item[0]);
+            console.log(cardName);
+            console.log(targetedColumnId);
+            Card.moveCard(cardId, cardName, targetedColumnId);
         }
     }).disableSelection();
 }
