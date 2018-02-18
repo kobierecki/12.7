@@ -33,7 +33,7 @@ function initSortable() {
         placeholder: 'card-placeholder',
         receive: function(event, ui){
             cardId = ui.item[0].id;
-            cardName = ui.item[0].innerText;
+            cardName = ui.item[0].querySelector('.card-description').innerText;
             targetedColumnId = ui.item[0].parentElement.parentElement.id;
             console.log(ui.item[0]);
             console.log(cardName);
