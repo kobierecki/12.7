@@ -6,7 +6,7 @@ function Card(id, name) {
         this.$element = createCard();
 
         function createCard() {
-            var $card = $('<li>').addClass('card');
+            var $card = $(`<li id=${self.id}>`).addClass('card');
             var $cardDescription = $('<p>').addClass('card-description').text(self.name);
             var $cardDelete = $('<button>').addClass('btn-delete-card').text('x');
 
@@ -33,17 +33,17 @@ Card.prototype.removeCard = function() {
     });
 }
 
-Card.prototype.moveCard = function(cardId, cardName, targetedColumnId){
+Card.moveCard = function(cardId, cardName, targetedColumnId){
     var self = this;
     console.log(cardId);
     console.log(cardName);
     console.log(targetedColumnId);
     $.ajax({
-        url: baseUrl + '/card/' + self.cardId,
+        url: baseUrl + '/card/' + cardId,
         type: 'PUT',
         data: {
             name: cardName,
-            bootcamp_kanban_column_id: self.targetedColumnId
+            bootcamp_kanban_column_id: targetedColumnId
         }
     });
 }

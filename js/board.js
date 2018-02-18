@@ -34,7 +34,7 @@ function initSortable() {
         receive: function(event, ui){
             cardId = ui.item[0].id;
             cardName = ui.item[0].innerText;
-            targetedColumnId = ui.item[0].parentElement.id;
+            targetedColumnId = ui.item[0].parentElement.parentElement.id;
             console.log(ui.item[0]);
             console.log(cardName);
             console.log(targetedColumnId);
