@@ -30,6 +30,15 @@ $('.create-column').click(function(){
 function initSortable() {
     $('.column-card-list').sortable({
         connectWith: '.column-card-list',
-        placeholder: 'card-placeholder'
+        placeholder: 'card-placeholder',
+        receive: function(event, ui){
+            cardId = ui.item[0].id;
+            cardName = ui.item[0].innerText;
+            targetedColumnId = ui.item[0].parentElement.parentElement.id;
+            console.log(ui.item[0]);
+            console.log(cardName);
+            console.log(targetedColumnId);
+            Card.moveCard(cardId, cardName, targetedColumnId);
+        }
     }).disableSelection();
 }
